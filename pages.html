@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    <h1>ส่งออเดอร์</h1>
+    <label>ชื่อ-นามสกุล:</label><input type="text" id="username"><br>
+    <label>ที่อยู่จัดส่ง:</label><input type="text" id="Address"><br>
+    <label>รหัสไปรษณีย์:</label><input type="text" id="PostID"><br>
+    <label>สินค้า:</label><input type="text" id="Product"><br>
+
+<button id="btn">ส่งข้อมูล</button>
+
+<div style="background-color:black; 
+                color:white; 
+                padding:20px;"> 
+        
+        <h1>DataFlair</h1> 
+        
+        <h3>DataFlair is an E-Learning website.</h3> 
+  
+        <p>We continuously work hard to bring you the best trainers to enable your smooth learning at your home as per your convenience. This is the reason why most of the DataFlair students get placed in top MNCs in Big Data just after the training.</p> 
+</div> 
+
+<script>
+
+document.getElementById("btn").addEventListener("click",doStuff);
+
+function doStuff(){
+
+var uname=document.getElementById("username").value; //store value
+var uAddress=document.getElementById("Address").value;
+var uPostID=document.getElementById("PostID").value;
+var uProduct=document.getElementById("Product").value;
+
+google.script.run.userClicked(uname,uAddress,uPostID,uProduct); //call code.gs 
+
+document.getElementById("username").value=""; //Reset it to blank
+
+}
+
+</script>
+  </body>
+</html>
